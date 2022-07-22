@@ -6,10 +6,12 @@ public class MainClass {
 
     try {
       Args arg = new Args("l,p#,d*", args);
-      boolean logging = arg.getBoolean('l');
 
       System.out.print("passed argument boolean value is: ");
-      System.out.println(logging);
+      System.out.println(arg.getBoolean('l'));
+
+      System.out.print("passed argument string value is: ");
+      System.out.println(arg.getString('d'));
 
       System.out.println("cardinality is: " + arg.cardinality());
 
@@ -23,3 +25,8 @@ public class MainClass {
   }
 
 }
+
+/*
+ * note: arguments format is like
+ * -l false -p 123 -d qwerty
+ */
